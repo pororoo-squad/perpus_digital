@@ -1,5 +1,6 @@
 <template>
   <div>
+    <NuxtLink to="/tambah">Isi Kunjungan</NuxtLink>
     <table border="1" width="50%">
       <thead>
         <tr>
@@ -11,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="pengunjung in visitor" :key="pengunjung.id">
+        <tr v-for="pengunjung in visitors" :key="pengunjung.id">
           <td>{{ pengunjung.id }}</td>
           <td>{{ pengunjung.tanggal }}</td>
           <td>{{ pengunjung.nama }}</td>
@@ -31,7 +32,7 @@ async function getData() {
   const { data, error } = await client
     .from('pengunjung')
     .select('*')
-    if(data) visitor.value = data
+    if(data) visitors.value = data
 }
 
 
