@@ -2,5 +2,5 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: ["@nuxtjs/supabase"],
-  supabase: { redirect: false },
-});
+  supabase: { redirect: false }
+})
